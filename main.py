@@ -77,7 +77,7 @@ class MainScr(Screen):
 class FirstScreen(Screen):
     def __init__(self, name='screen1'):
         super().__init__(name=name)
-        self.lbl_sec = Seconds(1)
+        self.lbl_sec = Seconds(15)
         self.lbl_sec.bind(done = self.sec_finished)
         self.text1 = Label(text = '[size=21]' + '[b]' + '[color=#5e7cbe]' + txt_test1 + '[/color]' + '[/b]', markup = True, size_hint_y=None, font_size='24sp', halign = 'center', valign='top')
         self.scroll = ScrollView(size_hint=(1, 0.7), pos_hint={'center_x': 0.51})
@@ -127,8 +127,8 @@ class FirstScreen(Screen):
 class SecondScreen(Screen):
     def __init__(self, name='screen2'):
         super().__init__(name=name)
-        self.sits = Sits(5, pos_hint={'center_x': 1, 'center_y': 0.65}) 
-        self.runner = Runner(5, 1.5, size_hint=(0.6, 1), pos_hint={'center_x': 0.5, 'center_y': 0.7})
+        self.sits = Sits(30, pos_hint={'center_x': 1, 'center_y': 0.65}) 
+        self.runner = Runner(30, 1.5, size_hint=(0.6, 1), pos_hint={'center_x': 0.5, 'center_y': 0.7})
         self.runner.bind(finished = self.finish)
         self.text1 = Label(text = '[size=19]' + '[b]' + '[color=#5e7cbe]' + txt_test2 + '[/color]' + '[/b]' + '[/size]', markup = True, pos_hint={'center_x': 0.49}, size_hint_y=None, font_size='24sp', halign = 'center', valign='top')
         self.scroll = ScrollView(size_hint=(1, 1), pos_hint={'center_x': 0.47})
@@ -176,7 +176,7 @@ class ThirdScreen(Screen):
         self.age1.disabled = True
         self.button_start = Button(text = 'Начать', background_color = color)
         self.except_lable = Label(text='', markup = True, size_hint=(1, 0.2), pos_hint={'center_x': 0.73})
-        self.lbl_sec = Seconds(1)
+        self.lbl_sec = Seconds(15)
         self.lbl_sec.bind(done = self.sec_finished)
         l_layout = BoxLayout(orientation = 'vertical', padding = 85)
         h_layout1 = BoxLayout(size_hint=(0.95, 0.1), padding = 4)
@@ -199,11 +199,11 @@ class ThirdScreen(Screen):
         if self.lbl_sec.done:
             if self.stage == 0:
                 self.stage = 1
-                self.lbl_sec.restart(1)
+                self.lbl_sec.restart(30)
                 self.name1.disabled = False
             elif self.stage == 1:
                 self.stage = 2
-                self.lbl_sec.restart(1) 
+                self.lbl_sec.restart(15) 
             elif self.stage == 2:
                 self.age1.disabled = False
                 self.name1.disabled = False
